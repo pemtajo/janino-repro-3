@@ -12,6 +12,7 @@ find target/classes
 
 java -cp target/classes:`cat classpath` datomic.JaninoRepro3
 
+mkdir -p src/java/junit/framework/subpackage
 cp siderail/Breaker.java src/java/junit/framework/subpackage/
 
 mvn -q clean compile
