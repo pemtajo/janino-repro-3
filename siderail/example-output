@@ -1,0 +1,68 @@
+./run-repro 
+================================
+Run 1. Compiled classes: 
+target/classes
+target/classes/datomic
+target/classes/datomic/JaninoRepro3.class
+Class location:
+jar:file:/Users/stu/.m2/repository/junit/junit/4.12/junit-4.12.jar!/junit/framework/TestCase.class
+Classpath:
+target/classes:/Users/stu/.m2/repository/org/codehaus/janino/commons-compiler-jdk/3.0.7/commons-compiler-jdk-3.0.7.jar:/Users/stu/.m2/repository/org/codehaus/janino/commons-compiler/3.0.7/commons-compiler-3.0.7.jar:/Users/stu/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/stu/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Run trivial script:
+123
+================================
+Run 2. Compiled classes: 
+target/classes
+target/classes/datomic
+target/classes/datomic/JaninoRepro3.class
+target/classes/junit
+target/classes/junit/framework
+target/classes/junit/framework/subpackage
+target/classes/junit/framework/subpackage/Breaker.class
+Class location:
+jar:file:/Users/stu/.m2/repository/junit/junit/4.12/junit-4.12.jar!/junit/framework/TestCase.class
+Classpath:
+target/classes:/Users/stu/.m2/repository/org/codehaus/janino/commons-compiler-jdk/3.0.7/commons-compiler-jdk-3.0.7.jar:/Users/stu/.m2/repository/org/codehaus/janino/commons-compiler/3.0.7/commons-compiler-3.0.7.jar:/Users/stu/.m2/repository/junit/junit/4.12/junit-4.12.jar:/Users/stu/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar
+Run trivial script:
+Exception in thread "main" org.codehaus.commons.compiler.CompileException: Line 1, Column 0: package junit.framework does not exist (compiler.err.doesnt.exist)
+	at org.codehaus.commons.compiler.jdk.SimpleCompiler$3.report(SimpleCompiler.java:322)
+	at com.sun.tools.javac.api.ClientCodeWrapper$WrappedDiagnosticListener.report(ClientCodeWrapper.java:593)
+	at com.sun.tools.javac.util.Log.writeDiagnostic(Log.java:616)
+	at com.sun.tools.javac.util.Log$DefaultDiagnosticHandler.report(Log.java:600)
+	at com.sun.tools.javac.util.Log.report(Log.java:562)
+	at com.sun.tools.javac.comp.Resolve.logResolveError(Resolve.java:3514)
+	at com.sun.tools.javac.comp.Resolve.accessInternal(Resolve.java:2219)
+	at com.sun.tools.javac.comp.Resolve.accessBase(Resolve.java:2262)
+	at com.sun.tools.javac.comp.Attr.selectSym(Attr.java:3390)
+	at com.sun.tools.javac.comp.Attr.visitSelect(Attr.java:3278)
+	at com.sun.tools.javac.tree.JCTree$JCFieldAccess.accept(JCTree.java:1897)
+	at com.sun.tools.javac.comp.Attr.attribTree(Attr.java:576)
+	at com.sun.tools.javac.comp.Attr.attribType(Attr.java:638)
+	at com.sun.tools.javac.comp.Attr.attribType(Attr.java:631)
+	at com.sun.tools.javac.comp.MemberEnter.attribImportType(MemberEnter.java:834)
+	at com.sun.tools.javac.comp.MemberEnter.visitImport(MemberEnter.java:558)
+	at com.sun.tools.javac.tree.JCTree$JCImport.accept(JCTree.java:571)
+	at com.sun.tools.javac.comp.MemberEnter.memberEnter(MemberEnter.java:437)
+	at com.sun.tools.javac.comp.MemberEnter.memberEnter(MemberEnter.java:449)
+	at com.sun.tools.javac.comp.MemberEnter.visitTopLevel(MemberEnter.java:528)
+	at com.sun.tools.javac.tree.JCTree$JCCompilationUnit.accept(JCTree.java:518)
+	at com.sun.tools.javac.comp.MemberEnter.memberEnter(MemberEnter.java:437)
+	at com.sun.tools.javac.comp.MemberEnter.complete(MemberEnter.java:1038)
+	at com.sun.tools.javac.code.Symbol.complete(Symbol.java:574)
+	at com.sun.tools.javac.code.Symbol$ClassSymbol.complete(Symbol.java:1037)
+	at com.sun.tools.javac.comp.Enter.complete(Enter.java:493)
+	at com.sun.tools.javac.comp.Enter.main(Enter.java:471)
+	at com.sun.tools.javac.main.JavaCompiler.enterTrees(JavaCompiler.java:982)
+	at com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:857)
+	at com.sun.tools.javac.main.Main.compile(Main.java:523)
+	at com.sun.tools.javac.api.JavacTaskImpl.doCall(JavacTaskImpl.java:129)
+	at com.sun.tools.javac.api.JavacTaskImpl.call(JavacTaskImpl.java:138)
+	at org.codehaus.commons.compiler.jdk.SimpleCompiler.cook(SimpleCompiler.java:353)
+	at org.codehaus.commons.compiler.jdk.ClassBodyEvaluator.cook(ClassBodyEvaluator.java:197)
+	at org.codehaus.commons.compiler.jdk.ScriptEvaluator.cook(ScriptEvaluator.java:426)
+	at org.codehaus.commons.compiler.jdk.ScriptEvaluator.cook(ScriptEvaluator.java:323)
+	at org.codehaus.commons.compiler.jdk.ScriptEvaluator.cook(ScriptEvaluator.java:273)
+	at org.codehaus.commons.compiler.Cookable.cook(Cookable.java:50)
+	at org.codehaus.commons.compiler.jdk.ScriptEvaluator.createFastEvaluator(ScriptEvaluator.java:566)
+	at org.codehaus.commons.compiler.jdk.ScriptEvaluator.createFastEvaluator(ScriptEvaluator.java:524)
+	at datomic.JaninoRepro3.main(JaninoRepro3.java:17)
